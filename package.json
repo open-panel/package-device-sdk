@@ -1,0 +1,59 @@
+{
+  "name": "@open-panel/device-sdk",
+  "version": "0.1.0",
+  "description": "Hardware-agnostic device abstraction for OpenPanel: the DeckDevice/DeviceDriver interfaces, the connection state machine, a driver registry, and a mock device for hardware-free development.",
+  "type": "module",
+  "license": "MIT",
+  "author": "OpenPanel contributors",
+  "homepage": "https://github.com/open-panel/package-device-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-panel/package-device-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/open-panel/package-device-sdk/issues"
+  },
+  "keywords": [
+    "openpanel",
+    "macropad",
+    "stream-deck",
+    "device-driver",
+    "hid"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@open-panel/shared": "^0.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
